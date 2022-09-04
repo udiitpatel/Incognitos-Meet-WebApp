@@ -1,9 +1,193 @@
-#video-grid{
-display: flex;
-justify-content: center;
+.main{
+    height: 100vh;
+    display: flex;
 }
-video{
-    height: 300px;
-    width: 300px;
-    object-fit: cover;
-}
+
+/* #video-grid{
+    display: flex;
+    justify-content: center;
+} */
+
+    video{
+        flex: 1 0 21%;
+        height: 250px;
+        max-width: 350px;
+        object-fit: cover;
+        border-radius: 10px;
+        margin: 12px;
+        border: 2px solid #4984c0;
+    }
+    #video-grid{
+       display: flex;
+       flex-wrap: wrap;
+       justify-content: center;
+       align-items: center;
+       overflow-y: auto;
+       max-height: 60%;
+    }
+    .main{
+        height: 100vh;
+        display: flex;
+        align-items: stretch;
+
+    }
+
+    .main__left{
+        flex: 0.8;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .main__right{
+        flex: 0.2;
+        
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background-color: #242324;
+            border-left: 1px solid #3D3D42;
+    }
+    .main__header{
+        color: #f5f5f5;
+        text-align: center;
+        border-bottom: 1px solid #3a3b3d;
+        margin: 10px;
+    }
+    .main__chat_window{
+        flex-grow: 1;
+        overflow-y: auto;
+    }
+    .main__message_container{
+        padding: 22px 12px;
+        display: flex;
+        border-top: 1px solid #3a3b3d;
+    }
+    .main__message_container input{
+        flex-grow: 1;
+        background-color: transparent;
+        border: none;
+        color: #f5f5f5;
+    }
+    .messages{
+        color: white;
+        list-style: none;
+    }
+
+    .unmute, .stop{
+        color: #cc3833;
+    }
+
+    .main__videos{
+        flex-grow: 1;
+        background-color: black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 40px;
+    }
+
+    .main__controls {
+        color: #D2D2D2;
+        display: flex;
+        /* flex-direction: row; */
+        background-color: #1c1e20;
+        padding: 5px;
+        justify-content: space-between;
+    }
+    .main__controls__blocks {
+        display: flex;
+    }
+    
+    .main__controls__button {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 8px 10px;
+        min-width: 80px;
+        cursor: pointer;
+    }
+    .main__controls__button_nohover {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 8px 10px;
+        min-width: 80px;
+    }
+    .main__controls__button:hover {
+        background-color: #343434;
+        border-radius: 5px;
+    }
+    
+
+    .leave_meeting {
+        color: #EB534B;
+    }
+    .main__link{
+        background-color: #3f3f3f;
+        color: white;
+        padding: 12px;
+    }
+
+    .meet_link_final {
+        color: #4984c0;
+    }
+    .meet_link_final:hover{
+        cursor: pointer;
+        color: #b0d3f5; 
+    }
+
+
+
+    .logo_image{
+        width: 40px;
+        height: 40px;
+        border-radius:50% ;
+    }
+
+    #snackbar {
+        visibility: hidden; /* Hidden by default. Visible on click */
+        min-width: 250px; /* Set a default minimum width */
+        margin-left: -125px; /* Divide value of min-width by 2 */
+        background-color: #333; /* Black background color */
+        color: #fff; /* White text color */
+        text-align: center; /* Centered text */
+        border-radius: 2px; /* Rounded borders */
+        padding: 16px; /* Padding */
+        position: fixed; /* Sit on top of the screen */
+        z-index: 1; /* Add a z-index if needed */
+        left: 50%; /* Center the snackbar */
+        bottom: 30px; /* 30px from the bottom */
+      }
+      
+      /* Show the snackbar when clicking on a button (class added with JavaScript) */
+      #snackbar.show {
+        visibility: visible; /* Show the snackbar */
+        /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
+        However, delay the fade out process for 2.5 seconds */
+        -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+        animation: fadein 0.5s, fadeout 0.5s 2.5s;
+      }
+      
+      /* Animations to fade the snackbar in and out */
+      @-webkit-keyframes fadein {
+        from {bottom: 0; opacity: 0;}
+        to {bottom: 30px; opacity: 1;}
+      }
+      
+      @keyframes fadein {
+        from {bottom: 0; opacity: 0;}
+        to {bottom: 30px; opacity: 1;}
+      }
+      
+      @-webkit-keyframes fadeout {
+        from {bottom: 30px; opacity: 1;}
+        to {bottom: 0; opacity: 0;}
+      }
+      
+      @keyframes fadeout {
+        from {bottom: 30px; opacity: 1;}
+        to {bottom: 0; opacity: 0;}
+      }
