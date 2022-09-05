@@ -14,7 +14,8 @@ navigator.mediaDevices.getUserMedia({
   video: true,
   audio: true
 }).then(stream => {
-  myPeer =  new Peer(undefined, {
+  myPeer = new Peer(undefined, {
+    path : '/peerjs',
   host: '/',
   port: '443',
 })
