@@ -23,7 +23,7 @@
        justify-content: center;
        align-items: center;
        overflow-y: auto;
-       max-height: 60%;
+       max-height: 80%;
     }
     .main{
         height: 100vh;
@@ -147,7 +147,8 @@
         border-radius:50% ;
     }
 
-    #snackbar {
+    #snackbar,
+    #snackbar_leave_meet {
         visibility: hidden; /* Hidden by default. Visible on click */
         min-width: 250px; /* Set a default minimum width */
         margin-left: -125px; /* Divide value of min-width by 2 */
@@ -163,7 +164,8 @@
       }
       
       /* Show the snackbar when clicking on a button (class added with JavaScript) */
-      #snackbar.show {
+      #snackbar.show,
+      #snackbar_leave_meet.show {
         visibility: visible; /* Show the snackbar */
         /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
         However, delay the fade out process for 2.5 seconds */

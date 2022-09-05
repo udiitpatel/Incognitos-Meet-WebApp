@@ -20,7 +20,7 @@
 </head>
 <body>
 
-    <div class="main">
+    <div class="main" id="main__id">
         <div class="main__left">
             <div class="main__videos">
                 <div id="video-grid">
@@ -48,7 +48,7 @@
                 </div>
                 <div class="main__controls__blocks">
                     <div class="main__controls__button">
-                        <span class="leave_meeting">Leave Meeting</span>
+                        <span class="leave_meeting" onclick="document.location='https://www.youtube.com/watch?v=xvFZjo5PgG0?autoplay=1'">Leave Meeting</span>
                     </div>
                 </div>
             </div>
@@ -57,9 +57,12 @@
             <div class="main__link">
                 <h4 id="main__meetlink">Meet Link : </h4>
                 <p class="meet_link_final" id="meet_link"><%=roomId%></p>
+                <h6 id="user_name_print">User Name:</h6>
+                <h6 id="number_of_user">0 Participants</h6>
                 <!-- <button class="copy_to_clipboard" id="copy_btn"><i class="fa-regular fa-copy"></i>COPY LINK</button> -->
             </div>
             <div id="snackbar">Copied To Clipboard</div>
+            <div id="snackbar_leave_meet">Good Bye</div>
             <div class="main__header">
                 <h6>Chat</h6>
             </div>

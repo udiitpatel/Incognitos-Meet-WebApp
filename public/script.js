@@ -6,15 +6,18 @@ const myVideo = document.createElement('video')
 myVideo.muted = true
 
 let userName = prompt("Enter your Name");
+const userNamePrint = document.getElementById('user_name_print');
+userNamePrint.innerText = "User Name: " + userName;
 
 let peers = {}
 navigator.mediaDevices.getUserMedia({
   video: true,
   audio: true
 }).then(stream => {
-  myPeer =  new Peer(undefined, {
+  myPeer = new Peer(undefined, {
+    path : '/peerjs',
   host: '/',
-  port: '3041',
+  port: '443',
 })
 myVideoStream = stream;
   addVideoStream(myVideo, stream)
@@ -46,7 +49,7 @@ myVideoStream = stream;
 
   socket.on('createMessage', message => {
    console.log("Create message", message);
-   $('ul').append(`<li class="message"><b>${userName}</b><br/>${message}</li>`)
+   $('ul').append(`<li class="message"><b>Anonymous</b><br/>${message}</li>`)
    scrollToBottom()
   // console.log('this come from server',message)
   })
@@ -178,14 +181,18 @@ const setPlayVideo = () => {
 //   visible = !visible;
 // });
 let copyLink = document.querySelector(".meet_link_final");
+let leaveMeet = document.querySelector(".leave_meeting");
 // console.log(roomId);
 copyLink.addEventListener("click", function() {
   let meetLink = JSON.stringify(copyLink.textContent)
   meetLink = meetLink.slice(1, meetLink.length-1);
-  meetLink = "http://localhost:3040/" + meetLink;
+  meetLink = "https://thawing-refuge-60984.herokuapp.com/" + meetLink;
   navigator.clipboard.writeText(meetLink);
   showSnackbar();
 });
+leaveMeet.addEventListener("click", function () {
+  showSnackbar2();
+})
 
 function showSnackbar() {
   // Get the snackbar DIV
@@ -197,3 +204,23 @@ function showSnackbar() {
   // After 3 seconds, remove the show class from DIV
   setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
 }
+function showSnackbar2() {
+  // Get the snackbar DIV
+  let x = document.getElementById("snackbar_leave_meet");
+
+  // Add the "show" class to DIV
+  x.className = "show";
+
+  // After 3 seconds, remove the show class from DIV
+  setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+} 
+
+ function yourFunction(){
+    var element = document.getElementById("video-grid");
+    var numberOfChildren = element.getElementsByTagName('video').length
+    let numberOfUser = document.getElementById("number_of_user")
+    numberOfUser.innerText =  numberOfChildren.toString()+" Participants";
+    setTimeout(yourFunction, 2000);
+}
+
+yourFunction();
