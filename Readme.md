@@ -1,4 +1,5 @@
 
+
 # Incognito Meet WebApp
 
 Hosted Link for the WebApp : [Incognito Meet WebApp](https://thawing-refuge-60984.herokuapp.com/bfbf6e2f-c9c4-4cdf-a101-f61640f8d5a6)
@@ -23,3 +24,8 @@ A online meeting platform for hosting meets over the internet network. The proje
 - Allows to toggle audio and video to start or stop.
 - Has a chat feature to allow livetime chats using websocket feature of socket.io
 - Shows the number of participants present in the video.
+=======
+# Incognito meet web app
+- Install Node, Express, nodemon
+- Install uuid library for genrating unique ids 
+- hii
