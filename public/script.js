@@ -186,7 +186,7 @@ let leaveMeet = document.querySelector(".leave_meeting");
 copyLink.addEventListener("click", function() {
   let meetLink = JSON.stringify(copyLink.textContent)
   meetLink = meetLink.slice(1, meetLink.length-1);
-  meetLink = "http://localhost:3040/" + meetLink;
+  meetLink = "https://thawing-refuge-60984.herokuapp.com/" + meetLink;
   navigator.clipboard.writeText(meetLink);
   showSnackbar();
 });
