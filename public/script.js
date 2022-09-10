@@ -86,22 +86,7 @@ function addVideoStream(video, stream) {
   videoGrid.append(video)
 }
 
-// let text = $('input')
 
-// $('html').keydown((e) =>{
-//   if(e.which == 13 && text.val().length !== 0){
-//     console.log(text.val())
-//     socket.emit('message',text.val());
-//     text.val('')
-//   }
-// })
-
-// socket.on('createMessage', message => {
-//   console.log("Create message", message);
-//   $('ul').append(`<li class="message"><b>user</b><br/>${message}</li>`)
-//   scrollToBottom()
-//   // console.log('this come from server',message)
-// })
 
 const scrollToBottom = () => {
   var d = $('.main__chat_window');
@@ -165,21 +150,7 @@ const setPlayVideo = () => {
   document.querySelector('.main__video_button').innerHTML = html;
 }
 
-// let chatRoom = document.querySelector(".main__right");
-// let chatBtn = document.querySelector("#chat_btn");
-// let mainLeft = document.querySelector(".main__left");
-// let visible = true;
-// chatBtn.addEventListener("click", function() {
-//   if ( visible ) {
-//     chatRoom.style.visibility = "collapse";
-//     mainLeft.style.flex = "1";
-//   }
-//   else {
-//     chatRoom.style.visibility = "visible";
-//     mainLeft.style.flex = "0.8"
-//   }
-//   visible = !visible;
-// });
+
 let copyLink = document.querySelector(".meet_link_final");
 let leaveMeet = document.querySelector(".leave_meeting");
 // console.log(roomId);
